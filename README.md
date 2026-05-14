@@ -1,6 +1,6 @@
 # nlp-microbatching-classifier
 
-### Testing:
+### Testing
 API testen via Swagger UI 
 
 `uv run uvicorn app.main:app --reload`
@@ -13,3 +13,13 @@ Loadtest starten
 
 Anschliessend Metrics testen: http://localhost:8000/metrics/
 
+### Lokaler Docker testen
+Docker-Image erstellen
+`docker build -t nlp-classifier .`
+
+Container starten
+`docker run -p 8000:8000 nlp-classifier`
+
+Testen
+`http://localhost:8000/docs`
+`http://localhost:8000/metrics`
