@@ -11,5 +11,5 @@ Loadtest starten
 
 `uv run python loadtest/load_generator.py`
 
-Metrics testen: http://localhost:8000/metrics/
+Anschliessend Metrics testen: http://localhost:8000/metrics/
 

@@ -37,8 +37,12 @@ async def process_batch(
 ) -> None:
     """Run inference for a complete microbatch"""
 
-    print(f"Processing batch with {len(batch)} comments")
-    print("Running batch inference...")
+    batch_processing_start = monotonic()
+
+    # Measure queue wait time before the model inference starts
+    for item in batch:
+        wait_time = batch_processing_start - item.enqueue_time
+        batch_wait_time_seconds.observe(wait_time)
 
     comments = [item.comment for item in batch]
 
@@ -57,8 +61,6 @@ async def process_batch(
     # Set the classification results in the corresponding futures for each request in the batch
     for item, result in zip(batch, results, strict=True):
         # Update Metrics queue wait time per request
-        wait_time = monotonic() - item.enqueue_time
-        batch_wait_time_seconds.observe(wait_time)
         comments_classified_total.inc()
         comments_classified_by_label_total.labels(label=result["label"]).inc()
 
