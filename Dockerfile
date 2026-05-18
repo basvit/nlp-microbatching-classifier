@@ -18,7 +18,7 @@ COPY pyproject.toml uv.lock ./
 RUN uv sync --frozen --no-dev
 
 # Copy application source code
-COPY . .
+COPY app ./app
 
 EXPOSE 8000
 

@@ -1,7 +1,4 @@
-from prometheus_client import Counter
-from prometheus_client import Gauge
-from prometheus_client import Histogram
-
+from prometheus_client import Counter, Gauge, Histogram
 
 # Total number of classified comments
 comments_classified_total = Counter(

@@ -7,12 +7,11 @@ from app.config import (
     BATCH_TIMEOUT_SECONDS,
     MAX_BATCH_SIZE,
 )
-
 from app.metrics import (
     batch_inference_duration_seconds,
-    batches_processed_total,
     batch_size_histogram,
     batch_wait_time_seconds,
+    batches_processed_total,
     comments_classified_by_label_total,
     comments_classified_total,
     microbatch_queue_size,

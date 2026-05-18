@@ -2,7 +2,6 @@ from transformers import pipeline
 
 from app.config import CANDIDATE_LABELS, MODEL_NAME
 
-
 classifier = pipeline("zero-shot-classification", model=MODEL_NAME)
 
 

@@ -4,6 +4,8 @@ services:
     container_name: classifier-service
     ports:
       - "8000:8000"
+    volumes:
+      - huggingface-cache:/root/.cache/huggingface
 
   prometheus:
     image: prom/prometheus:latest
@@ -22,3 +24,6 @@ services:
       - "3000:3000"
     depends_on:
       - prometheus
+
+volumes:
+  huggingface-cache:

@@ -2,15 +2,13 @@ import asyncio
 from time import monotonic
 
 from fastapi import APIRouter
-from httpcore import request
 
-from app.microbatch import request_queue
-from app.microbatch import QueueItem
+from app.metrics import microbatch_queue_size
+from app.microbatch import QueueItem, request_queue
 from app.models import (
     ClassificationRequest,
     ClassificationResponse,
 )
-from app.metrics import microbatch_queue_size
 
 router = APIRouter()
 

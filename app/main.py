@@ -2,10 +2,10 @@ import asyncio
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from prometheus_client import make_asgi_app
 
 from app.microbatch import batch_worker
 from app.routes import router
-from prometheus_client import make_asgi_app
 
 
 @asynccontextmanager
