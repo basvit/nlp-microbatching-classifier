@@ -18,22 +18,6 @@ Das Projekt demonstriert:
 
 ---
 
-## Repository klonen
-
-Projekt lokal klonen:
-
-```bash
-git clone git@github.com:basvit/nlp-microbatching-classifier.git
-```
-
-In das Projektverzeichnis wechseln:
-
-```bash
-cd nlp-microbatching-classifier
-```
-
----
-
 ## Architektur
 
 Das System besteht aus drei Hauptservices:
@@ -54,7 +38,7 @@ Das System besteht aus drei Hauptservices:
 
 ---
 
-## Verwendete Technologien
+## Technologien
 
 - Python 3.11
 - FastAPI
@@ -67,6 +51,47 @@ Das System besteht aus drei Hauptservices:
 - Docker Compose
 - uv
 - Ruff
+
+---
+
+## Installation & Setup
+
+```bash
+# Repository klonen
+git clone git@github.com:basvit/nlp-microbatching-classifier.git
+
+# Virtuelle Umgebung erstellen
+uv venv
+source .venv/bin/activate
+
+# Dependencies installieren
+uv sync
+```
+
+---
+
+## Projekt starten
+
+Alle Services starten:
+
+```bash
+docker compose up --build
+```
+
+Verfügbare Services:
+
+| Service | URL |
+|---|---|
+| Classifier API | http://localhost:8000 |
+| Swagger Docs | http://localhost:8000/docs |
+| Metrics Endpoint | http://localhost:8000/metrics |
+| Prometheus | http://localhost:9090 |
+| Grafana | http://localhost:3000 |
+
+Grafana Login: 
+
+- User: admin
+- Password: admin
 
 ---
 
@@ -166,31 +191,6 @@ Das exportierte Dashboard befindet sich unter:
 ```text
 grafana/dashboard.json
 ```
-
----
-
-## Projekt starten
-
-Alle Services starten:
-
-```bash
-docker compose up --build
-```
-
-Verfügbare Services:
-
-| Service | URL |
-|---|---|
-| Classifier API | http://localhost:8000 |
-| Swagger Docs | http://localhost:8000/docs |
-| Metrics Endpoint | http://localhost:8000/metrics |
-| Prometheus | http://localhost:9090 |
-| Grafana | http://localhost:3000 |
-
-Grafana Login: 
-
-- User: admin
-- Password: admin
 
 ---
 
