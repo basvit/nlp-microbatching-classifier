@@ -18,6 +18,22 @@ Das Projekt demonstriert:
 
 ---
 
+## Repository klonen
+
+Projekt lokal klonen:
+
+```bash
+git clone git@github.com:basvit/nlp-microbatching-classifier.git
+```
+
+In das Projektverzeichnis wechseln:
+
+```bash
+cd nlp-microbatching-classifier
+```
+
+---
+
 ## Architektur
 
 Das System besteht aus drei Hauptservices:
