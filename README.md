@@ -23,3 +23,26 @@ Container starten
 Testen
 `http://localhost:8000/docs`
 `http://localhost:8000/metrics`
+
+### Docker Compose 
+
+Starten
+`docker compose up --build`
+
+Classifier starten
+`http://localhost:8000/docs`
+
+Metrics starten
+`http://localhost:8000/metrics`
+
+Prometheus
+`http://localhost:9090`
+
+Grafana
+`http://localhost:3000`
+
+User: admin
+
+Passwort: admin
+
+
